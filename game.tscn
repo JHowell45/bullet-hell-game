@@ -4,5 +4,13 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 654.0
+color = Color(0, 0, 0, 1)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lm0rt")]
-position = Vector2(543, 324)
+position = Vector2(574, 323)
