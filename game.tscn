@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxpvpttqj0r5j"]
+[gd_scene load_steps=4 format=3 uid="uid://dxpvpttqj0r5j"]
 
 [ext_resource type="PackedScene" uid="uid://b4hnylvuwrrlf" path="res://player.tscn" id="1_lm0rt"]
 [ext_resource type="PackedScene" uid="uid://brh1633eoihmd" path="res://asteroid.tscn" id="2_2mdip"]
+
+[sub_resource type="Curve2D" id="Curve2D_r7eof"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,9 +14,13 @@ layer = -1
 offset_right = 1152.0
 offset_bottom = 654.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lm0rt")]
 position = Vector2(574, 323)
 
 [node name="Asteroid" parent="." instance=ExtResource("2_2mdip")]
 position = Vector2(254, 180)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_r7eof")
