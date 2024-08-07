@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 600.0
+const SPEED = 300.0
+
+const ROTATE_DEGREES = 0.1
 
 var direction = Vector2(0, 0)
 
@@ -10,8 +12,12 @@ func _physics_process(delta):
 		direction.y = -1
 	if Input.is_action_pressed("ui_down"):
 		direction.y = 1
+	if Input.is_action_pressed("ui_left"):
+		rotation -= ROTATE_DEGREES
+	if Input.is_action_pressed("ui_right"):
+		rotation += ROTATE_DEGREES
 
-	velocity = direction * SPEED
+	velocity = (direction * SPEED).rotated(rotation)
 	
 	move_and_slide()
 	direction = Vector2(0, 0)
