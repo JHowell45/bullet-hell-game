@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxpvpttqj0r5j"]
+[gd_scene load_steps=3 format=3 uid="uid://dxpvpttqj0r5j"]
 
 [ext_resource type="PackedScene" uid="uid://b4hnylvuwrrlf" path="res://player.tscn" id="1_lm0rt"]
+[ext_resource type="Texture2D" uid="uid://c4kf5aepaci3q" path="res://assets/asteroid.png" id="2_esbue"]
 
 [node name="Game" type="Node2D"]
 
@@ -14,3 +15,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lm0rt")]
 position = Vector2(574, 323)
+
+[node name="Asteroid" type="Sprite2D" parent="."]
+position = Vector2(243, 158)
+texture = ExtResource("2_esbue")
+
+[node name="Asteroid2" type="Sprite2D" parent="."]
+position = Vector2(879, 462)
+texture = ExtResource("2_esbue")
