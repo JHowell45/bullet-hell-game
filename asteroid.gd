@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 const DECELERATION = 30
 
+var fixed_rotation = randf_range(-0.1, 0.1)
+
 func _physics_process(delta):
-	var fixed_rotation = randf_range(0.0, 0.2)
 	rotation += fixed_rotation
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	move_and_slide()
