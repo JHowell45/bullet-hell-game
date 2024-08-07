@@ -4,13 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://ce68da7fdrcay" path="res://assets/meteor.ase" id="3_c8q8m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ik4g3"]
-radius = 98.0816
+radius = 39.8121
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_xesls")
 
 [node name="meteor" parent="." instance=ExtResource("3_c8q8m")]
 position = Vector2(-4, -1)
+scale = Vector2(0.421875, 0.421875)
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
