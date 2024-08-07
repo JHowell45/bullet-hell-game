@@ -17,7 +17,4 @@ color = Color(0, 0, 0, 1)
 position = Vector2(574, 323)
 
 [node name="Asteroid" parent="." instance=ExtResource("2_2mdip")]
-position = Vector2(181, 171)
-
-[node name="Asteroid2" parent="." instance=ExtResource("2_2mdip")]
-position = Vector2(940, 396)
+position = Vector2(254, 180)
