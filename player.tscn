@@ -1,12 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4hnylvuwrrlf"]
+[gd_scene load_steps=8 format=3 uid="uid://b4hnylvuwrrlf"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ocfx6"]
 [ext_resource type="Texture2D" path="res://assets/Sprite-0002.png" id="2_4d8hu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iv1r"]
-size = Vector2(32, 78)
+size = Vector2(12, 49)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efx21"]
+size = Vector2(7, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4700"]
+size = Vector2(62, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n4ln"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knbin"]
+size = Vector2(7, 19)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ocfx6")
 
 [node name="Sprite-0002" type="Sprite2D" parent="."]
@@ -17,4 +29,29 @@ texture = ExtResource("2_4d8hu")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_1iv1r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(34.5, 17.5)
+shape = SubResource("RectangleShape2D_efx21")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_h4700")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, 30)
+shape = SubResource("RectangleShape2D_4n4ln")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionShape2D4"]
+position = Vector2(-25.5, 0)
+shape = SubResource("RectangleShape2D_4n4ln")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-21.5, 2.5)
+shape = SubResource("RectangleShape2D_knbin")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(22, 2)
+shape = SubResource("RectangleShape2D_knbin")
