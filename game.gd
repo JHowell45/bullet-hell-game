@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func spawn_asteroid():
 	var asteroid = preload("res://asteroid.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()

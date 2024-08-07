@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxpvpttqj0r5j"]
+[gd_scene load_steps=4 format=3 uid="uid://dxpvpttqj0r5j"]
 
 [ext_resource type="PackedScene" uid="uid://b4hnylvuwrrlf" path="res://player.tscn" id="1_lm0rt"]
 [ext_resource type="Script" path="res://game.gd" id="1_wc2vw"]
-[ext_resource type="PackedScene" uid="uid://brh1633eoihmd" path="res://asteroid.tscn" id="2_2mdip"]
 
 [sub_resource type="Curve2D" id="Curve2D_r7eof"]
 _data = {
@@ -22,19 +21,19 @@ offset_bottom = 654.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_lm0rt")]
-position = Vector2(574, 323)
-
-[node name="Asteroid" parent="." instance=ExtResource("2_2mdip")]
-position = Vector2(254, 180)
+[node name="Player" parent="." instance=ExtResource("1_lm0rt")]
+position = Vector2(576, 328)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_r7eof")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
+position = Vector2(-359, -333)
+rotation = -0.00223089
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.07
+wait_time = 0.2
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
