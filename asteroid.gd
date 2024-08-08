@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal disappeared
 signal destroyed
 
 const DECELERATION = 1
@@ -48,4 +49,4 @@ func _physics_process(delta):
 func delete_if_too_far():
 	if global_position.distance_to(player.global_position) > MAX_DISTANCE:
 		queue_free()
-		destroyed.emit()
+		disappeared.emit()
