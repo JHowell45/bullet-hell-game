@@ -4,7 +4,7 @@ signal disappeared
 signal destroyed
 
 const DECELERATION = 1
-
+const HEALTH = 1
 const MAX_DISTANCE = 1000
 
 var fixed_rotation = randf_range(-0.1, 0.1)
