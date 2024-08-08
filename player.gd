@@ -6,6 +6,10 @@ const DECELERATION = 150
 
 var direction = Vector2.ZERO
 
+var cannonSelect: bool = false
+
+var cannon: Marker2D
+
 func _physics_process(delta):
 	shoot()
 	if Input.is_action_pressed("ui_up"):
@@ -22,6 +26,11 @@ func _physics_process(delta):
 func shoot():
 	if Input.is_action_pressed("ui_select"):
 		var bullet = preload("res://bullet.tscn").instantiate()
-		bullet.global_position = %RightCannon.global_position
 		bullet.rotation = rotation
-		%RightCannon.add_child(bullet)
+		if cannonSelect:
+			cannon = %RightCannon
+		else:
+			cannon = %LeftCannon
+		bullet.global_position = cannon.global_position
+		cannon.add_child(bullet)
+		cannonSelect = not cannonSelect
