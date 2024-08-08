@@ -1,6 +1,6 @@
 extends Node2D
 
-var asteroid_limit = 200
+var asteroid_limit = 2
 var current_asteroid_count = 0
 
 func spawn_asteroid():
@@ -13,6 +13,7 @@ func spawn_asteroid():
 
 
 func _on_timer_timeout():
+	#print("ASTEROID COUNT: %s" % current_asteroid_count)
 	if current_asteroid_count < asteroid_limit:
 		spawn_asteroid()
 		current_asteroid_count += 1
