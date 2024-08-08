@@ -4,7 +4,6 @@ signal disappeared
 signal destroyed
 
 const DECELERATION = 1
-const HEALTH = 1
 const MAX_DISTANCE = 1000
 
 var fixed_rotation = randf_range(-0.1, 0.1)
@@ -50,3 +49,7 @@ func delete_if_too_far():
 	if global_position.distance_to(player.global_position) > MAX_DISTANCE:
 		queue_free()
 		disappeared.emit()
+		
+func take_damage():
+	queue_free()
+	destroyed.emit()
