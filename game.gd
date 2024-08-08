@@ -3,6 +3,10 @@ extends Node2D
 var asteroid_limit = 10
 var current_asteroid_count = 0
 
+const ASTEROID_POINTS = 1
+
+var score = 0
+
 func spawn_asteroid():
 	var asteroid = preload("res://asteroid.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
