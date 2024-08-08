@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 const SPEED = 1000
 const RANGE = 500
