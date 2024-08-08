@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal destroyed
 
-const DECELERATION = 5
+const DECELERATION = 1
 
 const MAX_DISTANCE = 1000
 
@@ -25,7 +25,11 @@ func _physics_process(delta):
 	move_and_slide()
 	if get_slide_collision_count() > 0:
 		print("%s || COLLISION: %s" % [get_rid(),  get_slide_collision_count()])
-		velocity += get_last_slide_collision().get_collider_velocity()
+		if get_last_slide_collision().get_collider_velocity().is_zero_approx():
+			velocity.x *= -1
+			velocity.y *= -1
+		else:
+			velocity += get_last_slide_collision().get_collider_velocity()
 	#for i in get_slide_collision_count():
 		#response_velocity += get_slide_collision(i).get_collider().velocity
 	#if !response_velocity.is_zero_approx():
@@ -38,7 +42,7 @@ func _physics_process(delta):
 			#velocity.x *= -1
 			#velocity.y *= -1
 	#velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
-	print("%s: %s" % [get_rid(), velocity])
+	#print("%s: %s" % [get_rid(), velocity])
 	
 
 func delete_if_too_far():
