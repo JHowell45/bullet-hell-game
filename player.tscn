@@ -62,4 +62,8 @@ position = Vector2(22, -8)
 
 [node name="LeftCannon" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-22, -8)
+position = Vector2(-19, -8)
+
+[node name="CanShoot" type="Timer" parent="LeftCannon"]
+unique_name_in_owner = true
+one_shot = true
