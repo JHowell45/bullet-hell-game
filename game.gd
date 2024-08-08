@@ -1,6 +1,6 @@
 extends Node2D
 
-var asteroid_limit = 2
+var asteroid_limit = 10
 var current_asteroid_count = 0
 
 func spawn_asteroid():
