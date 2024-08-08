@@ -28,7 +28,7 @@ func _physics_process(delta):
 		rotation += ROTATE_DEGREES
 	#velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
 	move_and_slide()
-	print("SHIP: %s" % velocity)
+	#print("SHIP: %s" % velocity)
 
 func shoot():
 	if Input.is_action_pressed("ui_select") && canShoot.is_stopped():
