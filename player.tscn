@@ -55,3 +55,9 @@ shape = SubResource("RectangleShape2D_knbin")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
 position = Vector2(22, 2)
 shape = SubResource("RectangleShape2D_knbin")
+
+[node name="RightCannon" type="Marker2D" parent="."]
+position = Vector2(22, -8)
+
+[node name="LeftCannon" type="Marker2D" parent="."]
+position = Vector2(-22, -8)

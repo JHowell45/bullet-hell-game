@@ -16,3 +16,10 @@ func _physics_process(delta):
 		rotation += ROTATE_DEGREES
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
 	move_and_slide()
+	print("SHIP: %s" % velocity)
+
+func shoot():
+	if Input.is_action_just_pressed("ui_select"):
+		var bullet = preload("res://bullet.tscn").instantiate()
+		bullet.global_position
+		add_child(bullet)
