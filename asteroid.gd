@@ -24,7 +24,7 @@ func _physics_process(delta):
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	move_and_slide()
 	if get_slide_collision_count() > 0:
-		print("%s || COLLISION: %s" % [get_rid(),  get_slide_collision_count()])
+		#print("%s || COLLISION: %s" % [get_rid(),  get_slide_collision_count()])
 		if get_last_slide_collision().get_collider_velocity().is_zero_approx():
 			velocity.x *= -1
 			velocity.y *= -1
